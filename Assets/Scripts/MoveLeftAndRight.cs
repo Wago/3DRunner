@@ -13,7 +13,7 @@ public class MoveLeftAndRight : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		transform.position += Vector3.right*Input.GetAxis("horizontal")*speed*Time.deltaTime;
+		transform.position += Vector3.right*Input.GetAxis("Horizontal")*speed*Time.deltaTime;
 
 	}
 }

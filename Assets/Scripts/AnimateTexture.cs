@@ -7,13 +7,11 @@ public class AnimateTexture : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		//Changes the offset on the main texture assigned to this current object
 		renderer.material.mainTextureOffset += speed * Time.deltaTime;
-
 	}
 }

@@ -7,12 +7,9 @@ public class DestroyBehindCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		//When this current objects gets past set Z coordinate it is destoryed. Used to destroy things when they are behind the camera.
 		if(transform.position.z <= destroyValue){
-
 			Destroy (gameObject);
-
 		}
-
 	}
 }

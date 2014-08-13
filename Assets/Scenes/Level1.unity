@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c77034228d0ac4b8d5c8d992b16b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle: {fileID: 100000, guid: f5efa9c30b6629f4ea9c131f72b05b5e, type: 2}
+  obstacle: {fileID: 100000, guid: bf5776df3f410fc4b898812e28b79581, type: 2}
   minSpawnTime: .100000001
   maxSpawnTime: .5
   minHorizontalPosition: -25

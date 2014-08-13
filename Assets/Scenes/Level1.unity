@@ -86,7 +86,7 @@ GameObject:
   - 65: {fileID: 149249244}
   - 23: {fileID: 149249243}
   m_Layer: 0
-  m_Name: Player
+  m_Name: RightWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,6 +154,8 @@ GameObject:
   - 33: {fileID: 188489168}
   - 65: {fileID: 188489167}
   - 23: {fileID: 188489166}
+  - 114: {fileID: 188489171}
+  - 54: {fileID: 188489170}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -188,7 +190,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 188489165}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -214,6 +216,33 @@ Transform:
   - {fileID: 1475909632}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!54 &188489170
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 188489165}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &188489171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 188489165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1790265427893546b551d91e485744f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gib: {fileID: 0}
 --- !u!1 &581585725
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +464,7 @@ GameObject:
   - 114: {fileID: 1420706701}
   - 114: {fileID: 1420706700}
   - 114: {fileID: 1420706702}
+  - 54: {fileID: 1420706703}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -469,7 +499,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1420706695}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: .5
   m_Height: 2
@@ -531,6 +561,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyValue: -11
+--- !u!54 &1420706703
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1420706695}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1475909631
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +588,7 @@ GameObject:
   - 65: {fileID: 1475909634}
   - 23: {fileID: 1475909633}
   m_Layer: 0
-  m_Name: Player
+  m_Name: LeftWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

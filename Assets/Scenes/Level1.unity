@@ -202,8 +202,8 @@ MonoBehaviour:
   obstacle: {fileID: 100000, guid: f5efa9c30b6629f4ea9c131f72b05b5e, type: 2}
   minSpawnTime: .100000001
   maxSpawnTime: .5
-  minHorizontalPosition: -10
-  maxHorizontalPosition: 10
+  minHorizontalPosition: -25
+  maxHorizontalPosition: 25
   minVerticalPosition: 0
   maxVerticalPosition: 0
 --- !u!4 &414096677
@@ -286,7 +286,7 @@ Transform:
   m_GameObject: {fileID: 581585725}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: 0, y: 0, z: 40}
-  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_LocalScale: {x: 50, y: 100, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1

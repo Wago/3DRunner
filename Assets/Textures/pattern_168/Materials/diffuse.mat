@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: diffuse
-  m_Shader: {fileID: 9, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -42,7 +42,7 @@ Material:
       data:
         first:
           name: _Parallax
-        second: .0250892863
+        second: .0799999982
     m_Colors:
       data:
         first:
@@ -51,4 +51,4 @@ Material:
       data:
         first:
           name: _SpecColor
-        second: {r: .227941155, g: .196096435, b: .196096435, a: 1}
+        second: {r: .112786703, g: .152941182, b: .0275893882, a: 1}

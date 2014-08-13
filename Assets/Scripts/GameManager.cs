@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 	//Points per unit travelled and a unified game speed to move at
 	public float pointsPerUnitTravelled = 1.0f;
 	public float gameSpeed = 10.0f;
+	public string titleScreen = "Title";
 
 	//Just some variables
 	private float score = 0.0f;
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour {
 				SaveHighScore();
 				hasSaved = true;
 			}if(Input.anyKeyDown){
-				Application.LoadLevel(Application.loadedLevel);
+				Application.LoadLevel("Title");
 			}
 		}
 		//When game over is true stop counting score
@@ -74,7 +75,7 @@ public class GameManager : MonoBehaviour {
 
 		//When game over becomes true (you die) display text!
 		if(gameOver == true){
-			GUILayout.Label("Game over! Press any key to reset!");
+			GUILayout.Label("Game over! Press any key to quit!");
 		}
 
 	}

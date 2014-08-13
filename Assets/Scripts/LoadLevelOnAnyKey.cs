@@ -7,11 +7,10 @@ public class LoadLevelOnAnyKey : MonoBehaviour {
 
 	// Use this for initialization
 	void Start(){
-		
 	}
-	
 	// Update is called once per frame
 	void Update(){
+		//Press any key to load level assigned above.
 		if(Input.anyKeyDown){
 			Application.LoadLevel(levelName);
 		}

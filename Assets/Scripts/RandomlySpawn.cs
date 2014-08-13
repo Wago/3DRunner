@@ -21,6 +21,11 @@ public class RandomlySpawn : MonoBehaviour {
 	}
 
 	void SpawnNow(){
-		Instantiate(obstacle, transform.position + new Vector3(Random.Range(minHorizontalPosition,maxHorizontalPosition),Random.Range(minVerticalPosition,maxVerticalPosition)),Quaternion.identity);
+		Instantiate(obstacle, transform.position + new Vector3(Random.Range(minHorizontalPosition,maxHorizontalPosition),
+		                                                       Random.Range(minVerticalPosition,maxVerticalPosition)),
+		            										   Quaternion.identity);
+
+		Invoke ("SpawnNow", Random.Range(minSpawnTime, maxSpawnTime));
+	
 	}
 }

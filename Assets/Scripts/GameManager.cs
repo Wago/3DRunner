@@ -10,15 +10,18 @@ public class GameManager : MonoBehaviour {
 	public float pointsPerUnitTravelled = 1.0f;
 	public float gameSpeed = 10.0f;
 
-	//Just some variables for score and gameover state
+	//Just some variables
 	private float score = 0.0f;
 	private static float highScore = 0.0f;
 	private bool gameOver = false;
+	private bool hasSaved = false;
 
 	// Use this for initialization
 	void Start () {
 		//Make sure Instance is a referance to THIS game object!
 		Instance = this;
+		//Loads the highscore from the playerprefs.
+		LoadHighScore();
 	}
 	
 	// Update is called once per frame
@@ -29,7 +32,10 @@ public class GameManager : MonoBehaviour {
 		}
 		//When game over is true, and key will restart the current loaded level
 		if(gameOver){
-			if(Input.anyKeyDown){
+			if(!hasSaved){
+				SaveHighScore();
+				hasSaved = true;
+			}if(Input.anyKeyDown){
 				Application.LoadLevel(Application.loadedLevel);
 			}
 		}
@@ -40,7 +46,21 @@ public class GameManager : MonoBehaviour {
 				highScore = score;
 			}
 		}
-
+		//Debug function to reset the highscore, when Y is pressed, then saves it to the playerpref.
+		if(Input.GetKeyDown(KeyCode.Y)){
+			highScore = 0;
+			SaveHighScore();
+		}
+	}
+	//Pusheds the highscore to the playerpref(A file saved locally on all platforms.
+	//Then saves it!
+	void SaveHighScore(){
+		PlayerPrefs.SetInt("Highscore",(int)highScore);
+		PlayerPrefs.Save();
+	}
+	//Loads the highscore saved above.
+	void LoadHighScore(){
+		highScore = PlayerPrefs.GetInt("Highscore");
 	}
 
 	void OnGUI(){

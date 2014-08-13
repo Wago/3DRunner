@@ -42,8 +42,8 @@ MonoBehaviour:
   obstacle: {fileID: 100000, guid: bf5776df3f410fc4b898812e28b79581, type: 2}
   minSpawnTime: .100000001
   maxSpawnTime: .5
-  minHorizontalPosition: -25
-  maxHorizontalPosition: 25
+  minHorizontalPosition: -100
+  maxHorizontalPosition: 100
   minVerticalPosition: 0
   maxVerticalPosition: 0
 --- !u!1001 &100100000

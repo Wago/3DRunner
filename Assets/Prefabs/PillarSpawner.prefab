@@ -40,8 +40,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle: {fileID: 100000, guid: bf5776df3f410fc4b898812e28b79581, type: 2}
-  minSpawnTime: .100000001
-  maxSpawnTime: .5
+  minSpawnTime: .00999999978
+  maxSpawnTime: .100000001
   minHorizontalPosition: -100
   maxHorizontalPosition: 100
   minVerticalPosition: 0

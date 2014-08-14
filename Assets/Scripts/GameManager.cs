@@ -113,6 +113,7 @@ public class GameManager : MonoBehaviour {
 	//Sets up for a reset;
 	void ResetGame(){
 		score = 0.0f; 
+		gameSpeed = startSpeed;
 		pointsPerUnit = startPointsPerUnitTravelled;
 		gameOver = false;
 		hasSaved = false;

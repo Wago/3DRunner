@@ -342,6 +342,7 @@ MonoBehaviour:
   pointsPerUnitTravelled: 1
   gameSpeed: 10
   titleScreen: Title
+  highscoreScreen: Highscore
   previousScore: 0
 --- !u!4 &267122631
 Transform:
@@ -835,7 +836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e213ba07407c842b496f922b2c87f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Level1
+  levelName: Highscore
 --- !u!23 &1850132346
 Renderer:
   m_ObjectHideFlags: 0

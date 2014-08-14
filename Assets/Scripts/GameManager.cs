@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
 	public float pointsPerUnitTravelled = 1.0f;
 	public float gameSpeed = 10.0f;
 	public string titleScreen = "Title";
+	public string highscoreScreen = "Highscore";
 
 	[HideInInspector] //This hides it in the inspector, but it can still be seen by other scripts.
 	public int previousScore = 0;
@@ -56,7 +57,8 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Only do this if you are not on the title screen!
-		if(Application.loadedLevelName != titleScreen){
+		if(Application.loadedLevelName != titleScreen &&
+		   Application.loadedLevelName != highscoreScreen){
 			//Find game object with the tag player, and if that object don't exsist put game over to true.
 			if(GameObject.FindGameObjectWithTag("Player") == null){
 				gameOver = true;
@@ -120,7 +122,8 @@ public class GameManager : MonoBehaviour {
 
 	void OnGUI(){
 		//Only display the gui text when not on the title screen.
-		if(Application.loadedLevelName != titleScreen){
+		if(Application.loadedLevelName != titleScreen &&
+		    Application.loadedLevelName != highscoreScreen){
 			//Convert current score to an in and display it on the screen
 			int currentScore = (int)score;
 			GUILayout.Label("Score: " + currentScore.ToString());

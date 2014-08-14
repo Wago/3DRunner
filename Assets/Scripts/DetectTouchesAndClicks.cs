@@ -16,6 +16,19 @@ public class DetectTouchesAndClicks : MonoBehaviour {
 
 			if(Physics.Raycast(ray, out hit)){
 				Debug.Log ("Object name: " + hit.collider.name, hit.collider.gameObject);
+				hit.collider.SendMessage("Touched",SendMessageOptions.DontRequireReceiver);
+			}
+		}
+		if(Input.touchCount > 0){
+			foreach(Touch touch in Input.touches){
+				Ray ray = Camera.main.ScreenPointToRay((Vector3)touch.position);
+				
+				RaycastHit hit;
+				
+				if(Physics.Raycast(ray, out hit)){
+					Debug.Log ("Object name: " + hit.collider.name, hit.collider.gameObject);
+					hit.collider.SendMessage("Touched",SendMessageOptions.DontRequireReceiver);
+				}
 			}
 		}
 	}

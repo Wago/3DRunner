@@ -118,10 +118,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorPropertyName: _Color
-  speed: .200000003
+  speed: .100000001
   saturation: 1
   brightness: 1
-  hue: 0
+  hue: .330000013
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

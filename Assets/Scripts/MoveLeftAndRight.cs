@@ -11,7 +11,14 @@ public class MoveLeftAndRight : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//Moves what ever gameobject this is assigned to Horizontally based on inputs.
+		//Moves what ever gameobject this is assigned to Horizontally based on keybaord inputs.
 		transform.position += Vector3.right*Input.GetAxis("Horizontal")*speed*Time.deltaTime;
+
+		if(PseudoInput.Instance.leftPressed){
+			transform.position += Vector3.left*speed*Time.deltaTime;
+		}
+		if(PseudoInput.Instance.rightPressed){
+			transform.position += Vector3.right*speed*Time.deltaTime;
+		}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
@@ -33,13 +34,14 @@ public class GameManager : MonoBehaviour {
 	private float score = 0.0f;
 	private static float highScore = 0.0f;
 
-	private int[] highScores = new int[5];
+	private List<int> highScores = new List<int>();
 
 	private bool gameOver = false;
 	private bool hasSaved = false;
 
 	// Use this for initialization
 	void Start () {
+		//PlayerPrefs.DeleteAll();
 		//Only do all of this if _instance is not this.
 		if(_instance != this){
 			//Only set this if its not already set.
@@ -108,32 +110,36 @@ public class GameManager : MonoBehaviour {
 		hasSaved = false;
 	}
 	//Pusheds the highscore to the playerpref(A file saved locally on all platforms.
-	//Then saves it!
 	void SaveHighScore(){
+
 		int highSlot = -1;
-		for(int i = 0; i < highScores.Length; i++){
-			if(highScores[i] < highScore){
+
+		for(int i = 0; i < highScores.Count; i++){
+			if(highScores[i] < score){
 				highSlot = i;
 				break;
 			}
 		}
 		if(highSlot != -1){
-			highScores[highSlot] = (int)highScore;
-			for(int i = highScores.Length - 1; i > highSlot; i--){
-				highScores[i] = highScores[i-1];
-			}
+			highScores.Insert(highSlot,(int)score);
+		}else{
+			highScores.Add((int)score);
 		}
 
 		//Save the highscore list
-		for(int i = 0; i < highScores.Length; i++){
+		for(int i = 0; i < highScores.Count; i++){
 			PlayerPrefs.SetInt("HighScore" + i.ToString(),highScores[i]);
 		}
+
+		PlayerPrefs.SetInt("ScoreNumber", highScores.Count);
+
 		PlayerPrefs.Save();
 	}
 	//Loads the highscore saved above.
 	void LoadHighScore(){
-		for(int i = 0; i < highScores.Length; i++){
-			highScores[i] = PlayerPrefs.GetInt("HighScore" + i.ToString());
+		highScores.Clear();
+		for(int i = 0; i < PlayerPrefs.GetInt("ScoreNumber"); i++){
+			highScores.Add(PlayerPrefs.GetInt("HighScore" + i.ToString()));
 		}
 	}
 

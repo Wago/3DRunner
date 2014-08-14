@@ -22,8 +22,8 @@ public class GameManager : MonoBehaviour {
 	private static GameManager _instance;
 
 	//Points per unit travelled and a unified game speed to move at
-	public float pointsPerUnitTravelled = 1.0f;
-	public float gameSpeed = 10.0f;
+	public float startPointsPerUnitTravelled = 1.0f;
+	public float startSpeed = 10.0f;
 	public string titleScreen = "Title";
 	public string highscoreScreen = "Highscore";
 
@@ -31,9 +31,10 @@ public class GameManager : MonoBehaviour {
 	public int previousScore = 0;
 
 	//Just some variables
-	private float score = 0.0f;
+	public float score = 0.0f;
+	public float gameSpeed = 0.0f;
 	private static float highScore = 0.0f;
-	private float pointsPerUnit = 0.0f;
+	public float pointsPerUnit = 0.0f;
 
 	private List<int> highScores = new List<int>();
 
@@ -59,7 +60,10 @@ public class GameManager : MonoBehaviour {
 		//Don't destory this game object on start, that way we can bring it in to the next scene.
 		DontDestroyOnLoad(gameObject);
 		//Resets the combo thingy to whatever is set in the inspector!
-		pointsPerUnit = pointsPerUnitTravelled;
+		pointsPerUnit = startPointsPerUnitTravelled;
+		//Sets the starting game speed to whatever is set in the inspector.
+		gameSpeed = startSpeed;
+
 	}
 	
 	// Update is called once per frame
@@ -109,6 +113,7 @@ public class GameManager : MonoBehaviour {
 	//Sets up for a reset;
 	void ResetGame(){
 		score = 0.0f; 
+		pointsPerUnit = startPointsPerUnitTravelled;
 		gameOver = false;
 		hasSaved = false;
 	}
@@ -145,7 +150,7 @@ public class GameManager : MonoBehaviour {
 			highScores.Add(PlayerPrefs.GetInt("HighScore" + i.ToString()));
 		}
 	}
-
+	/*
 	void OnGUI(){
 		//Only display the gui text when not on the title screen.
 		if(Application.loadedLevelName != titleScreen &&
@@ -159,7 +164,7 @@ public class GameManager : MonoBehaviour {
 			GUILayout.Label("High Score: " + currentHighScore.ToString());
 
 			//Displays current points per unit travelled
-			int currentPointsPerUnit = (int)pointsPerUnitTravelled;
+			int currentPointsPerUnit = (int)pointsPerUnit;
 			GUILayout.Label("Points Per Unit: " + currentPointsPerUnit.ToString());
 			
 			//When game over becomes true (you die) display text!
@@ -168,6 +173,7 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 	}
+	 */
 
 	public static bool IsMobile(){
 		if (Application.platform == RuntimePlatform.IPhonePlayer ||

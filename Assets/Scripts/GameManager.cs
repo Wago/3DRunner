@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour {
 
 	private List<int> highScores = new List<int>();
 
-	private bool gameOver = false;
+	public bool gameOver = false;
 	private bool hasSaved = false;
 
 	// Use this for initialization

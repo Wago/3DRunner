@@ -7,9 +7,11 @@ public class GibOnTrigger : MonoBehaviour {
 	public GameObject gib;
 
 	//When something enters current objects trigger, spawn above gib and destroy it self.
-	void OnTriggerEnter(){
-		Instantiate(gib, transform.position,Quaternion.identity);
-		Destroy(gameObject);
+	void OnTriggerEnter( Collider theCollision){
+		if(theCollision.gameObject.tag == "Obstable"){
+			Instantiate(gib, transform.position,Quaternion.identity);
+			Destroy(gameObject);
+		}
 	}
 
 }

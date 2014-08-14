@@ -5,7 +5,9 @@ public class PointsOnTrigger : MonoBehaviour {
 	
 	public float pointIncrease = 100;
 	void OnTriggerEnter(){
-		GameManager.Instance.score += pointIncrease*GameManager.Instance.pointsPerUnit;
-		audio.Play();
+		if(!GameManager.Instance.gameOver){
+			GameManager.Instance.score += pointIncrease*GameManager.Instance.pointsPerUnit;
+			audio.Play();
+		}
 	}
 }

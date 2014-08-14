@@ -8,10 +8,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400006}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400008}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: PillarParent
   m_TagString: Untagged
@@ -35,7 +35,7 @@ GameObject:
   - 114: {fileID: 11400012}
   m_Layer: 9
   m_Name: Pillar
-  m_TagString: Untagged
+  m_TagString: Obstable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,7 +174,7 @@ AudioSource:
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 8182601521b10a6419a2e899e122f1f4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 74a54be7ded3db34e9ddb2f2bac4fc10, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -270,13 +270,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6dc2abe67649c94cb4b4b74e92148d3, type: 3}
+  m_Script: {fileID: 11500000, guid: a7dcb34144bff5d4e8b6b463da21e887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalScale: {x: 1, y: 10, z: 1}
-  time: 1
+  speed: 1
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -11,12 +11,5 @@ public class PseudoMoveLeftAndRight : MonoBehaviour {
 	void Update () {
 		//Changes the offset on the texture of the current object to give the illusion of horizontal movement based on the speed set above or in the inspector.
 		renderer.material.mainTextureOffset += Vector2.right * Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-
-		if(PseudoInput.Instance.leftPressed){
-			renderer.material.mainTextureOffset += -Vector2.right*speed*Time.deltaTime;
-		}
-		if(PseudoInput.Instance.rightPressed){
-			renderer.material.mainTextureOffset += Vector2.right*speed*Time.deltaTime;
-		}
 	}
 }

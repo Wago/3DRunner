@@ -238,6 +238,7 @@ GameObject:
   - 4: {fileID: 678537745}
   - 23: {fileID: 678537744}
   - 102: {fileID: 678537743}
+  - 114: {fileID: 678537746}
   m_Layer: 0
   m_Name: Score4
   m_TagString: Untagged
@@ -252,7 +253,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 678537742}
-  m_Text: 4.
+  m_Text: '4.  '
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -298,6 +299,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &678537746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 678537742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba3ebc4ee47fcc4a988675b4cdde00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreSlot: 3
 --- !u!1 &963176743
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +384,7 @@ GameObject:
   - 4: {fileID: 1343009972}
   - 23: {fileID: 1343009971}
   - 102: {fileID: 1343009970}
+  - 114: {fileID: 1343009973}
   m_Layer: 0
   m_Name: Score2
   m_TagString: Untagged
@@ -385,7 +399,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1343009969}
-  m_Text: 2.
+  m_Text: '2.  '
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -431,6 +445,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &1343009973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1343009969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba3ebc4ee47fcc4a988675b4cdde00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreSlot: 1
 --- !u!1 &1357126746
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +550,7 @@ GameObject:
   - 4: {fileID: 1576799540}
   - 23: {fileID: 1576799539}
   - 102: {fileID: 1576799538}
+  - 114: {fileID: 1576799541}
   m_Layer: 0
   m_Name: Score5
   m_TagString: Untagged
@@ -538,7 +565,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1576799537}
-  m_Text: 5.
+  m_Text: '5.  '
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -584,6 +611,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!114 &1576799541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1576799537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba3ebc4ee47fcc4a988675b4cdde00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreSlot: 4
 --- !u!1 &1705412136
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,6 +633,7 @@ GameObject:
   - 4: {fileID: 1705412139}
   - 23: {fileID: 1705412138}
   - 102: {fileID: 1705412137}
+  - 114: {fileID: 1705412140}
   m_Layer: 0
   m_Name: Score1
   m_TagString: Untagged
@@ -608,7 +648,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1705412136}
-  m_Text: 1.
+  m_Text: '1.  '
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -654,6 +694,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &1705412140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1705412136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba3ebc4ee47fcc4a988675b4cdde00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreSlot: 0
 --- !u!1 &1845436545
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +786,7 @@ GameObject:
   - 4: {fileID: 1971864023}
   - 23: {fileID: 1971864022}
   - 102: {fileID: 1971864021}
+  - 114: {fileID: 1971864024}
   m_Layer: 0
   m_Name: Score3
   m_TagString: Untagged
@@ -748,7 +801,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1971864020}
-  m_Text: 3.
+  m_Text: '3.  '
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -794,6 +847,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &1971864024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1971864020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba3ebc4ee47fcc4a988675b4cdde00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreSlot: 2
 --- !u!1 &2080827916
 GameObject:
   m_ObjectHideFlags: 0

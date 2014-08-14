@@ -3,6 +3,7 @@ using System.Collections;
 
 public class DisplayHighScore : MonoBehaviour {
 
+	public int scoreSlot = 0;
 	private string label;
 
 	// Use this for initialization
@@ -12,6 +13,6 @@ public class DisplayHighScore : MonoBehaviour {
 		//Grabs the current text and assigns it to label.
 		label = textMesh.text;
 		//set the text to label + highscore!
-		textMesh.text = label + PlayerPrefs.GetInt("Highscore");
+		textMesh.text = label + PlayerPrefs.GetInt("HighScore" + scoreSlot.ToString());
 	}
 }

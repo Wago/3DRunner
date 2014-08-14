@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour {
 	//Just some variables
 	private float score = 0.0f;
 	private static float highScore = 0.0f;
+
+	private int[] highScores = new int[5];
+
 	private bool gameOver = false;
 	private bool hasSaved = false;
 
@@ -97,11 +100,6 @@ public class GameManager : MonoBehaviour {
 			//Resets things
 			ResetGame();
 		}
-		//Debug function to reset the highscore, when Y is pressed, then saves it to the playerpref.
-		if(Input.GetKeyDown(KeyCode.Y)){
-			highScore = 0;
-			SaveHighScore();
-		}
 	}
 	//Sets up for a reset;
 	void ResetGame(){
@@ -112,12 +110,31 @@ public class GameManager : MonoBehaviour {
 	//Pusheds the highscore to the playerpref(A file saved locally on all platforms.
 	//Then saves it!
 	void SaveHighScore(){
-		PlayerPrefs.SetInt("Highscore",(int)highScore);
+		int highSlot = -1;
+		for(int i = 0; i < highScores.Length; i++){
+			if(highScores[i] < highScore){
+				highSlot = i;
+				break;
+			}
+		}
+		if(highSlot != -1){
+			highScores[highSlot] = (int)highScore;
+			for(int i = highScores.Length - 1; i > highSlot; i--){
+				highScores[i] = highScores[i-1];
+			}
+		}
+
+		//Save the highscore list
+		for(int i = 0; i < highScores.Length; i++){
+			PlayerPrefs.SetInt("HighScore" + i.ToString(),highScores[i]);
+		}
 		PlayerPrefs.Save();
 	}
 	//Loads the highscore saved above.
 	void LoadHighScore(){
-		highScore = PlayerPrefs.GetInt("Highscore");
+		for(int i = 0; i < highScores.Length; i++){
+			highScores[i] = PlayerPrefs.GetInt("HighScore" + i.ToString());
+		}
 	}
 
 	void OnGUI(){

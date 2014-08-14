@@ -10,9 +10,16 @@ public class LoadLevelOnAnyKey : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update(){
-		//Press any key to load level assigned above.
-		if(Input.anyKeyDown){
-			Application.LoadLevel(levelName);
+		if(!GameManager.IsMobile()){
+			if(Input.anyKeyDown){
+				Application.LoadLevel(levelName);
+			}
+		}else{
+			foreach(Touch touch in Input.touches){
+				if(touch.phase == TouchPhase.Began){
+					Application.LoadLevel(levelName);
+				}
+			}
 		}
 	}
 }

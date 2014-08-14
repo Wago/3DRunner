@@ -248,11 +248,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6400000, guid: bf99710e53c09b542b32e9bc5d31c090, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6400000, guid: bf99710e53c09b542b32e9bc5d31c090, type: 2}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: bf99710e53c09b542b32e9bc5d31c090, type: 2}
       propertyPath: speed
@@ -1114,8 +1114,8 @@ MeshCollider:
   m_PrefabInternal: {fileID: 374578844}
   m_GameObject: {fileID: 1939041634}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
   m_Convex: 0

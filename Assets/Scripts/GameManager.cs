@@ -71,10 +71,18 @@ public class GameManager : MonoBehaviour {
 					previousScore = (int)score;
 					//Make sure this if statement is not run again.
 					hasSaved = true;
-				//On any keypress load the level named Title
-				}if(Input.anyKeyDown){
-					Application.LoadLevel("Title");
+				}if(!IsMobile()){
+					if(Input.anyKeyDown){
+						Application.LoadLevel("Title");
+					}
+				}else{
+					foreach(Touch touch in Input.touches){
+						if(touch.phase == TouchPhase.Began){
+							Application.LoadLevel("Title");
+						}
+					}
 				}
+				//On any keypress load the level named Title
 			}
 			//When game over is true stop counting score
 			if(!gameOver){
@@ -125,6 +133,18 @@ public class GameManager : MonoBehaviour {
 			if(gameOver == true){
 				GUILayout.Label("Game over! Press any key to quit!");
 			}
+		}
+	}
+
+	public static bool IsMobile(){
+		if (Application.platform == RuntimePlatform.IPhonePlayer ||
+		    Application.platform == RuntimePlatform.Android ||
+		    Application.platform == RuntimePlatform.BlackBerryPlayer ||
+		    Application.platform == RuntimePlatform.MetroPlayerARM ||
+		    Application.platform == RuntimePlatform.WP8Player){
+			return true;
+		}else{
+			return false;
 		}
 	}
 }

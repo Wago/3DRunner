@@ -15,7 +15,7 @@ public class DetectTouchesAndClicks : MonoBehaviour {
 			RaycastHit hit;
 
 			if(Physics.Raycast(ray, out hit)){
-				Debug.Log ("Object name: " + hit.collider.name, hit.collider.gameObject);
+				//Debug.Log ("Object name: " + hit.collider.name, hit.collider.gameObject);
 				hit.collider.SendMessage("Touched",SendMessageOptions.DontRequireReceiver);
 			}
 		}
@@ -26,7 +26,7 @@ public class DetectTouchesAndClicks : MonoBehaviour {
 				RaycastHit hit;
 				
 				if(Physics.Raycast(ray, out hit)){
-					Debug.Log ("Object name: " + hit.collider.name, hit.collider.gameObject);
+					//Debug.Log ("Object name: " + hit.collider.name, hit.collider.gameObject);
 					hit.collider.SendMessage("Touched",SendMessageOptions.DontRequireReceiver);
 				}
 			}

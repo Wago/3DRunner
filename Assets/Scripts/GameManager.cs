@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour {
 	//Just some variables
 	private float score = 0.0f;
 	private static float highScore = 0.0f;
+	private float pointsPerUnit = 0.0f;
 
 	private List<int> highScores = new List<int>();
 
@@ -57,6 +58,8 @@ public class GameManager : MonoBehaviour {
 		LoadHighScore();
 		//Don't destory this game object on start, that way we can bring it in to the next scene.
 		DontDestroyOnLoad(gameObject);
+		//Resets the combo thingy to whatever is set in the inspector!
+		pointsPerUnit = pointsPerUnitTravelled;
 	}
 	
 	// Update is called once per frame
@@ -93,7 +96,7 @@ public class GameManager : MonoBehaviour {
 			}
 			//When game over is true stop counting score
 			if(!gameOver){
-				score += pointsPerUnitTravelled*gameSpeed*Time.deltaTime;
+				score += pointsPerUnit*gameSpeed*Time.deltaTime;
 				if(score > highScore){
 					highScore = score;
 				}
@@ -105,7 +108,7 @@ public class GameManager : MonoBehaviour {
 	}
 	//Sets up for a reset;
 	void ResetGame(){
-		score = 0.0f;
+		score = 0.0f; 
 		gameOver = false;
 		hasSaved = false;
 	}
@@ -155,6 +158,10 @@ public class GameManager : MonoBehaviour {
 			int currentHighScore = (int)highScore;
 			GUILayout.Label("High Score: " + currentHighScore.ToString());
 
+			//Displays current points per unit travelled
+			int currentPointsPerUnit = (int)pointsPerUnitTravelled;
+			GUILayout.Label("Points Per Unit: " + currentPointsPerUnit.ToString());
+			
 			//When game over becomes true (you die) display text!
 			if(gameOver == true){
 				GUILayout.Label("Game over! Press any key to quit!");

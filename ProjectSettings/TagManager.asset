@@ -3,6 +3,7 @@
 --- !u!78 &1
 TagManager:
   tags:
+  - PointTrigger
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   User Layer 8: Player
   User Layer 9: Obstacle
   User Layer 10: SoundEffect
-  User Layer 11: SoundEffects
+  User Layer 11: SoundEffectTrigger
   User Layer 12: 
   User Layer 13: 
   User Layer 14: 

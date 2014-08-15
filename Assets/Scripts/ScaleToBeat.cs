@@ -8,11 +8,15 @@ public class ScaleToBeat : MonoBehaviour{
 	public float amplitudeMultiplier = 1.0f;
 	public FFTWindow window;
 
-	private float originalObjectScale;
+	private float originalObjectScaleY;
+	private float originalObjectScaleX;
+	private float originalObjectScaleZ;
 	
 	// Use this for initialization
 	void Start (){
-		originalObjectScale = transform.localScale.y;
+		originalObjectScaleY = transform.localScale.y;
+		originalObjectScaleX = transform.localScale.x;
+		originalObjectScaleZ = transform.localScale.z;
 	}
 	
 	// Update is called once per frame
@@ -20,7 +24,9 @@ public class ScaleToBeat : MonoBehaviour{
 		float[] data = new float[samples];
 		AudioListener.GetSpectrumData (data, channel, window);
 		Vector3 temp = transform.localScale;
-		temp.y = originalObjectScale + data[frequencyChannel]*amplitudeMultiplier;
+		temp.y = originalObjectScaleY + data[frequencyChannel]*amplitudeMultiplier;
+		temp.x = originalObjectScaleX + data[frequencyChannel]*amplitudeMultiplier;
+		temp.z = originalObjectScaleZ + data[frequencyChannel]*amplitudeMultiplier;
 		transform.localScale = temp;
 	}
 }

@@ -12,7 +12,7 @@ public class SimpleJump : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButtonDown("Jump") && transform.position.y <= 1.0f){
+		if(Input.GetButtonDown("Jump") && transform.position.y <= 0.5f){
 			rigidbody.AddForce(0,jumpForce,0);
 		}
 	}

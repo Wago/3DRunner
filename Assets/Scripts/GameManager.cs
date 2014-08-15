@@ -179,7 +179,7 @@ public class GameManager : MonoBehaviour {
 	public static bool IsMobile(){
 		if (Application.platform == RuntimePlatform.IPhonePlayer ||
 		    Application.platform == RuntimePlatform.Android ||
-		    Application.platform == RuntimePlatform.BlackBerryPlayer ||
+		    /*Application.platform == RuntimePlatform.BlackBerryPlayer ||*/
 		    Application.platform == RuntimePlatform.MetroPlayerARM ||
 		    Application.platform == RuntimePlatform.WP8Player){
 			return true;

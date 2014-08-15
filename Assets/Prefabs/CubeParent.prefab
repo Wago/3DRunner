@@ -13,6 +13,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400006}
   m_Layer: 9
   m_Name: Cube
   m_TagString: Obstable
@@ -46,8 +47,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: .461939812, y: .191341728, z: .191341728, w: .844623208}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 4, z: 2}
   m_Children: []
   m_Father: {fileID: 400004}
   m_RootOrder: 0
@@ -58,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.231514, y: 7.40059886e-06, z: 23.4665585}
+  m_LocalPosition: {x: -10.8914566, y: -3.12762094, z: 60.0672073}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 400000}
@@ -158,6 +159,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: -1}
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3e96125ec489e4cbd67968f0552939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minRotation: 0
+  maxRotation: 360
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1

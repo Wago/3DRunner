@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: SpawnParent
+  m_Name: PillarSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,13 +39,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c77034228d0ac4b8d5c8d992b16b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle: {fileID: 100000, guid: fc7d07f1a4a8c4344b8ce5227db4cdc3, type: 2}
-  minSpawnTime: 1
-  maxSpawnTime: 2
+  obstacle: {fileID: 100000, guid: bf5776df3f410fc4b898812e28b79581, type: 2}
+  minSpawnTime: .200000003
+  maxSpawnTime: .400000006
   minHorizontalPosition: -100
   maxHorizontalPosition: 100
-  minVerticalPosition: -10
-  maxVerticalPosition: 10
+  minVerticalPosition: 0
+  maxVerticalPosition: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

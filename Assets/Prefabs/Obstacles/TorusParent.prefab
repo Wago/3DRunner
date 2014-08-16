@@ -11,7 +11,6 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400008}
-  - 114: {fileID: 11400010}
   m_Layer: 0
   m_Name: TorusParent
   m_TagString: Untagged
@@ -263,7 +262,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3c9b62f711cf241a616e10800b5e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -10
+  dashEnable: 0
+  dashSpeed: -10
+  dashDuration: .699999988
+  doubleTapSpeed: .100000001
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -300,18 +302,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: -1}
---- !u!114 &11400010
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7dcb34144bff5d4e8b6b463da21e887, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

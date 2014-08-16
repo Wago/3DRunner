@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour {
 	public float gameSpeedIncreasePerSecond = 1.0f;
 	public bool increaseSpeedWithTime = false;
 	private static float highScore = 0.0f;
+	public float tempHighScore = 0.0f;
 	public float pointsPerUnit = 0.0f;
 
 	private List<int> highScores = new List<int>();
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		tempHighScore = highScore;
 		//Only do this if you are not on the title screen!
 		if(Application.loadedLevelName != titleScreen &&
 		   Application.loadedLevelName != highscoreScreen){
@@ -175,13 +177,12 @@ public class GameManager : MonoBehaviour {
 				GUILayout.Label("Game over! Press any key to quit!");
 			}
 		}
-		*/
 		//Convert current gameSpeed to an int and display it on the screen
 		int currentSpeed = (int)gameSpeed;
 		GUILayout.Label("Speed: " + currentSpeed.ToString());
 		//Convert current HIGH score to an int and display it on the screen
 		int currentHighScore = (int)highScore;
-		GUILayout.Label("High Score: " + currentHighScore.ToString());
+		GUILayout.Label("High Score: " + currentHighScore.ToString());*/
 	}
 
 	public static bool IsMobile(){

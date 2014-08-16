@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour {
 	//Just some variables
 	public float score = 0.0f;
 	public float gameSpeed = 0.0f;
+	public float gameSpeedIncreasePerSecond = 1.0f;
+	public bool increaseSpeedWithTime = false;
 	private static float highScore = 0.0f;
 	public float pointsPerUnit = 0.0f;
 
@@ -104,6 +106,9 @@ public class GameManager : MonoBehaviour {
 				if(score > highScore){
 					highScore = score;
 				}
+				if(increaseSpeedWithTime == true){
+					gameSpeed += gameSpeedIncreasePerSecond * Time.deltaTime;
+				}
 			}
 		}else{
 			//Resets things
@@ -150,19 +155,16 @@ public class GameManager : MonoBehaviour {
 		for(int i = 0; i < PlayerPrefs.GetInt("ScoreNumber"); i++){
 			highScores.Add(PlayerPrefs.GetInt("HighScore" + i.ToString()));
 		}
+		highScore = PlayerPrefs.GetInt("HighScore0");
 	}
-	/*
 	void OnGUI(){
+		/*
 		//Only display the gui text when not on the title screen.
 		if(Application.loadedLevelName != titleScreen &&
 		    Application.loadedLevelName != highscoreScreen){
 			//Convert current score to an in and display it on the screen
 			int currentScore = (int)score;
 			GUILayout.Label("Score: " + currentScore.ToString());
-
-			//Convert current HIGH score to an in and display it on the screen
-			int currentHighScore = (int)highScore;
-			GUILayout.Label("High Score: " + currentHighScore.ToString());
 
 			//Displays current points per unit travelled
 			int currentPointsPerUnit = (int)pointsPerUnit;
@@ -173,8 +175,14 @@ public class GameManager : MonoBehaviour {
 				GUILayout.Label("Game over! Press any key to quit!");
 			}
 		}
+		*/
+		//Convert current gameSpeed to an int and display it on the screen
+		int currentSpeed = (int)gameSpeed;
+		GUILayout.Label("Speed: " + currentSpeed.ToString());
+		//Convert current HIGH score to an int and display it on the screen
+		int currentHighScore = (int)highScore;
+		GUILayout.Label("High Score: " + currentHighScore.ToString());
 	}
-	 */
 
 	public static bool IsMobile(){
 		if (Application.platform == RuntimePlatform.IPhonePlayer ||

@@ -5,9 +5,6 @@ public class IncreaseSpeedBasedOnPoints : MonoBehaviour {
 	
 	public float divideWith = 1.0f;
 
-	private float speed;
-	private float score;
-
 	// Use this for initialization
 	void Start () {
 	
@@ -15,8 +12,7 @@ public class IncreaseSpeedBasedOnPoints : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		speed = GameManager.Instance.gameSpeed;
-		score = GameManager.Instance.score/divideWith;
+		float score = GameManager.Instance.score/divideWith;
 		GameManager.Instance.gameSpeed += score*Time.deltaTime;
 	}
 }

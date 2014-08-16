@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoveLeftAndRightBasedOnGameSpeed : MonoBehaviour {
-		
+public class PseudoMoveLeftAndRightBasedOnGameSpeed : MonoBehaviour {
+
 	public bool dashEnable = false;
 	public float dashSpeed = 2.0f;
 	public float dashDuration = 1.0f;
@@ -16,24 +16,24 @@ public class MoveLeftAndRightBasedOnGameSpeed : MonoBehaviour {
 	private static bool isDashing = false;
 	private static float dashDirection = 0.0f;
 	private static float t = 0.0f;
-
-	private float speed = 0.0f;
-
+	
+	public float speed = 0.0f;
+	
 	// Use this for initialization
 	void Start () {
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		speed = -GameManager.Instance.gameSpeed;
-		transform.position += Vector3.right*Input.GetAxis("Horizontal")*speed*Time.deltaTime;
-
+		speed = GameManager.Instance.gameSpeed/4;
+		//Changes the offset on the texture of the current object to give the illusion of horizontal movement based on the speed set above or in the inspector.
+		renderer.material.mainTextureOffset += Vector2.right * Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 		if(dashEnable == true){
-			speed = -GameManager.Instance.gameSpeed;
-			dashSpeed = -GameManager.Instance.gameSpeed*2;
+			dashSpeed = GameManager.Instance.gameSpeed/2;
+			speed = GameManager.Instance.gameSpeed/2;
 			if(!isDashing){
-				//Moves what ever gameobject this is assigned to Horizontally based on keybaord inputs.
-				transform.position += Vector3.right*Input.GetAxis("Horizontal")*speed*Time.deltaTime;
+				//Changes the offset on the texture of the current object to give the illusion of horizontal movement based on the speed set above or in the inspector.
+				renderer.material.mainTextureOffset += Vector2.right * Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 			}
 			//Dash Right
 			if(Input.GetAxis("Horizontal") > 0.0f){
@@ -75,12 +75,12 @@ public class MoveLeftAndRightBasedOnGameSpeed : MonoBehaviour {
 			lastTap += Time.deltaTime;
 		}
 	}
-
+	
 	IEnumerator Dash(float speed){
 		isDashing = true;
-
+		
 		while(Time.time - t <= dashDuration){
-			transform.position +=Vector3.right*speed*Time.deltaTime;
+			renderer.material.mainTextureOffset += Vector2.right*speed*Time.deltaTime;
 			yield return null;
 		}
 		isDashing = false;

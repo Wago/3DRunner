@@ -11,6 +11,6 @@ public class HUDScore : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		int currentScore = (int)GameManager.Instance.score;
-		guiText.text = "Score: " + currentScore;
+		guiText.text = "Distance: " + currentScore;
 	}
 }

@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e213ba07407c842b496f922b2c87f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Level1
+  levelName: Level2
   startOnEnter: 1
 --- !u!1 &1198822943
 GameObject:
@@ -908,6 +908,9 @@ MonoBehaviour:
   previousScore: 0
   score: 0
   gameSpeed: 10
+  gameSpeedIncreasePerSecond: 1
+  increaseSpeedWithTime: 0
+  tempHighScore: 0
   pointsPerUnit: 0
   gameOver: 0
 --- !u!4 &1913388180
